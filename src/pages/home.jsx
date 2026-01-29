@@ -1,4 +1,4 @@
-import homeImage from "../img/67331140ed060e2752aeb7a3.avif";
+import homeImage from "../img/67589b2ae2690e6250be5706.avif";
 
 function Home() {
   return (
