@@ -1,21 +1,29 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ צריך לייבא
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
 function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const { setUser } = useContext(UserContext);
-  const navigate = useNavigate(); // ✅ יוזר נוויגייט
+  const navigate = useNavigate();
 
   function handleSave(e) {
-    e.preventDefault(); // מונע רענון עמוד
+    e.preventDefault();
+    
     if (!name || !email) {
       alert("אנא מלאו שם ומייל");
       return;
     }
-      console.log("User saved:", { name, email }); 
+    
+    if (!email.includes("@")) {
+      alert("אנא הזינו כתובת מייל תקינה");
+      return;
+    }
+    
     setUser({ name, email });
+    alert(`שלום ${name}! התחברת בהצלחה`);
+    navigate("/");
   }
 
   return (
@@ -24,17 +32,19 @@ function Login() {
       <form onSubmit={handleSave}>
         <input
           type="text"
-          placeholder="שם"
+          placeholder="שם מלא"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
         <input
           type="email"
-          placeholder="מייל"
+          placeholder="כתובת מייל"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
-            <button onClick={handleSave}>שמירה</button>
+        <button type="submit">התחבר</button>
       </form>
     </div>
   );

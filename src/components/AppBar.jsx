@@ -6,13 +6,19 @@ function AppBar() {
   const { user } = useContext(UserContext);
 
   return (
-    <nav style={{ padding: "10px", background: "#f4ecec" }}>
-      <Link to="/">בית </Link> |{" "}
-      <Link to="/recipes">מתכונים </Link> |{" "}
-      <Link to="/login">התחברות</Link>|{" "}
-      <Link to="/add">➕הוסף מתכון</Link>
-      {user && <span style={{ marginLeft: "1rem" }}>שלום, {user.name}</span>}
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="nav-link">בית</Link>
+        <span className="nav-separator">|</span>
+        <Link to="/recipes" className="nav-link">מתכונים</Link>
+        <span className="nav-separator">|</span>
+        <Link to="/login" className="nav-link">התחברות</Link>
+        <span className="nav-separator">|</span>
+        <Link to="/add" className="nav-link">➕הוסף מתכון</Link>
+        {user && <span className="user-greeting">שלום, {user.name}</span>}
+      </div>
     </nav>
   );
 }
+
 export default AppBar;
