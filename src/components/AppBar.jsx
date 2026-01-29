@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { UserContext } from "../context/UserContext"; // ← ייבוא הקונטקסט
+import { UserContext } from "../context/UserContext";
 
 function AppBar() {
-  const { user } = useContext(UserContext); // ← קריאה ל-user מה-context
+  const { user } = useContext(UserContext);
 
   return (
     <nav style={{ padding: "10px", background: "#f4ecec" }}>
-      <Link to="/">בית</Link> |{" "}
-      <Link to="/recipes">מתכונים</Link> |{" "}
-      <Link to="/login">התחברות</Link>
+      <Link to="/">בית </Link> |{" "}
+      <Link to="/recipes">מתכונים </Link> |{" "}
+      <Link to="/login">התחברות</Link>|{" "}
+      <Link to="/add">➕הוסף מתכון</Link>
       {user && <span style={{ marginLeft: "1rem" }}>שלום, {user.name}</span>}
     </nav>
   );

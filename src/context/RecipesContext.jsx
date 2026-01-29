@@ -40,10 +40,20 @@ export function RecipesProvider({ children }) {
       )
     );
   }
+function addRecipe(newRecipe) {
+  setRecipes(prev => [
+    ...prev,
+    {
+      ...newRecipe,
+      id: Date.now(),
+      isFavorite: false
+    }
+  ]);
+}
 
   return (
-    <RecipesContext.Provider value={{ recipes, setRecipes, toggleFavorite }}>
-      {children}
+    <RecipesContext.Provider value={{ recipes, toggleFavorite, addRecipe }}>
+     {children}
     </RecipesContext.Provider>
   );
 }

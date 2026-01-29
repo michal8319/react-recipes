@@ -7,6 +7,7 @@ import RecipeDetails from "./pages/recipeDetails";
 import Login from "./pages/login";
 import { RecipesProvider } from "./context/RecipesContext";
 import { UserProvider } from './context/UserContext';
+import AddRecipe from "./pages/AddRecipe";
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/recipes" element={<Recipes/>} />
         <Route path="/recipe/:id" element={<RecipeDetails/>} />
         <Route path="login" element={<Login />} />
+        <Route path="/add" element={<AddRecipe />} />
       </Routes>
     </BrowserRouter>
         </UserProvider>
