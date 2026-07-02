@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Recipe Management Web Application (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-featured, responsive web application for managing, filtering, and discovering recipes. Built using modern React.js patterns including Context API for state management and React Router for navigation.
 
-## Available Scripts
+##  Key Features
 
-In the project directory, you can run:
+- **Dynamic Navigation (AppBar):** A global navigation bar providing seamless routing across the application.
+- **Home Dashboard:** An inviting landing page displaying custom platform visuals.
+- **Recipe Catalog (`RecipeList`):** Displays recipe cards with essential metadata such as preparation time and categories. Clicking any card navigates to its dedicated details view.
+- **Detailed Recipe View (`RecipeDetails`):** Extracts structural parameters dynamically to display complete ingredients, structured instructions, and preparation properties. Includes an interactive option to toggle the recipe as a "Favorite".
+- **User Authentication (`Login`):** A secure, interactive form capturing user data (Name & Email) and updating the global context state upon submission.
 
-### `npm start`
+##  Architecture & State Management
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Global State (Context API):** Centralized data handling using `useContext` to maintain and modify the structural list of recipes globally.
+- **Recipe Schema Structure:** Each recipe object encapsulates a unique identifier, title, preparation duration, structural arrays for ingredients, categorization properties, and boolean flags for favorite states.
+- **Dynamic Routing:** Implements standard route parameters handled via `useParams` and lifecycle side-effects optimized with `useEffect` for data retrieval.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  Tech Stack
 
-### `npm test`
+- **Frontend Framework:** React.js (Hooks, Context API)
+- **Routing:** React Router DOM
+- **Languages:** JavaScript (ES6+), HTML5, CSS3
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##  Local Installation & Setup
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/michal8319/react-recipes.git](https://github.com/michal8319/react-recipes.git)
